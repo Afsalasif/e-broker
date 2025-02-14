@@ -13,7 +13,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from- opacity-90"></div>
 
       {/* Animated Dots on the Left Side */}
-      <div className="absolute top-[33%] left-0 w-80 h-80 rotate-90  transform grid grid-cols-10 grid-rows-5 gap-1 pointer-events-none">
+      <div className="absolute top-[33%] hidden md:grid left-0 w-80 h-80 rotate-90  transform  grid-cols-10 grid-rows-5 gap-1 pointer-events-none">
         {Array.from({ length: 50 }).map((_, i) => (
           <div
             key={i}
@@ -40,7 +40,7 @@ const Hero = () => {
       <div className="relative z-10 flex flex-col md:flex-row items-center w-full px-10 container mx-auto">
       <div className="text-[#091650] md:w-1/2 text-center md:text-left">
         <motion.h1 
-          className="text-7xl uppercase font-bold mb-4"
+          className="text-5xl uppercase font-bold mb-4"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -48,7 +48,7 @@ const Hero = () => {
           Empowering Global Real Estate Agents
         </motion.h1>
         <motion.p 
-          className="text-[#091650] text-lg mb-6"
+          className="text-[#091650]  text-lg mb-6"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 1 }}

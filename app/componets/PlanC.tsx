@@ -40,7 +40,7 @@ const PlanC = () => {
             <AnimatePresence>
               {!isHovered && (
                 <motion.div
-                  className="absolute inset-0 bg-black rounded-xl flex items-center justify-center text-white text-2xl font-bold cursor-pointer z-10"
+                  className="absolute inset-0 bg-black hidden md:flex rounded-xl  items-center justify-center text-white text-2xl font-bold cursor-pointer z-10"
                   variants={overlayVariants}
                   initial="initial"
                   exit="exit"
