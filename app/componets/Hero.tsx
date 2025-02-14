@@ -40,7 +40,7 @@ const Hero = () => {
       <div className="relative z-10 flex flex-col md:flex-row items-center w-full px-10 container mx-auto">
       <div className="text-[#091650] md:w-1/2 text-center md:text-left">
         <motion.h1 
-          className="text-5xl uppercase font-bold mb-4"
+          className="text-5xl md:text-7xl uppercase font-bold mb-4"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
