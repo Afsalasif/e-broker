@@ -8,22 +8,22 @@ const BusinessPlatformAccess = () => {
     {
       title: "In-system Calling",
       description: "Seamless voice communication integrated directly within the platform",
-      icon: <FiPhoneCall className="w-8 h-8 mb-4 text-blue-600" />,
+      icon: <FiPhoneCall className="w-8 h-8 mb-4 text-[#091650]" />,
     },
     {
       title: "Unified Communications",
       description: "Integrated WhatsApp & email with smart threading",
-      icon: <FiMessageSquare className="w-8 h-8 mb-4 text-green-600" />,
+      icon: <FiMessageSquare className="w-8 h-8 mb-4 text-[#091650]" />,
     },
     {
       title: "24/7 Support Hub",
       description: "Instant access to multi-disciplinary support teams",
-      icon: <FiMail className="w-8 h-8 mb-4 text-purple-600" />,
+      icon: <FiMail className="w-8 h-8 mb-4 text-[#091650]" />,
     },
     {
       title: "Live Lead Stream",
       description: "Real-time property matches & buyer analytics",
-      icon: <FiZap className="w-8 h-8 mb-4 text-orange-600" />,
+      icon: <FiZap className="w-8 h-8 mb-4 text-[#091650]" />,
     },
   ];
 
@@ -61,7 +61,7 @@ const BusinessPlatformAccess = () => {
 
   return (
     <motion.section
-      className="relative py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 overflow-hidden"
+      className="relative py-24 bg-white overflow-hidden"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -96,10 +96,10 @@ const BusinessPlatformAccess = () => {
           className="text-center mb-20"
           variants={itemVariants}
         >
-          <h2 className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-6">
+          <h2 className="text-6xl font-extralight uppercase text-[#091650] mb-6">
             Intelligent Business Platform
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-[#091650] max-w-3xl mx-auto leading-relaxed">
             Empower your real estate operations with our AI-driven platform featuring predictive analytics, 
             smart automation, and real-time collaboration tools.
           </p>
@@ -121,10 +121,10 @@ const BusinessPlatformAccess = () => {
                   {feature.icon}
                   <div className="absolute inset-0 bg-current opacity-10 blur-3xl rounded-full" />
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-100 mb-4">
+                <h3 className="text-2xl font-semibold text-[#091650] mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-[#091650] leading-relaxed">
                   {feature.description}
                 </p>
                 <div className="mt-6 w-full opacity-0 group-hover:opacity-100 transition-opacity">
@@ -142,7 +142,7 @@ const BusinessPlatformAccess = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          <button className="bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-4 rounded-xl font-semibold text-white hover:scale-105 transition-transform shadow-lg hover:shadow-xl">
+          <button className="bg-[#091650] px-8 py-4 rounded-xl font-semibold text-white hover:scale-105 transition-transform shadow-lg hover:shadow-xl">
             Start Free Trial
           </button>
           <p className="mt-4 text-gray-400 text-sm">

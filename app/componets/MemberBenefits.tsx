@@ -1,7 +1,7 @@
 'use client'
-import React, { useState, useEffect } from 'react';
-import { Briefcase, Globe, Home, GraduationCap, UserCheck, DollarSign, Clock } from 'lucide-react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { GraduationCap, UserCheck } from "lucide-react";
+import { motion } from "framer-motion";
 
 const MemberBenefits = () => {
   const [slideIn, setSlideIn] = useState(false);
@@ -18,7 +18,7 @@ const MemberBenefits = () => {
       scale: 1,
       transition: {
         duration: 0.7,
-        ease: [0.22, 1, 0.36, 1], // Custom ease for a snappier feel
+        ease: [0.22, 1, 0.36, 1],
         delayChildren: 0.4,
         staggerChildren: 0.15,
       },
@@ -38,44 +38,17 @@ const MemberBenefits = () => {
     },
   };
 
-  const iconVariants = {
-    hover: {
-      scale: 1.2,
-      rotate: 30,
-      transition: { duration: 0.3, ease: "easeInOut" },
-    },
-  };
-
   return (
     <motion.section
-      className="py-20 bg-white text-gray-800 rounded-xl shadow-xl overflow-hidden relative"
+      className="py-20 bg-white text-gray-800 overflow-hidden relative"
       variants={containerVariants}
       initial="hidden"
       animate={slideIn ? "visible" : "hidden"}
     >
-      {/* Animated Background Lines (Optional - for extra visual flair) */}
-      <motion.div
-        className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
-        style={{
-          background: `repeating-linear-gradient(
-            -45deg,
-            #E0E7FF,
-            #E0E7FF 4px,
-            transparent 0,
-            transparent 8px
-          )`,
-        }}
-        animate={{ opacity: [0.1, 0.3, 0.1] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-      />
-
       <div className="container mx-auto px-8">
         {/* Header Section */}
-        <motion.div
-          className="text-center mb-12"
-          variants={itemVariants}
-        >
-          <h2 className="text-4xl font-bold tracking-tight leading-tight mb-4 text-blue-700">
+        <motion.div className="text-center mb-12" variants={itemVariants}>
+          <h2 className="text-5xl font-extralight uppercase tracking-widest leading-tight mb-4 text-[#091650]">
             Who Can Become an E Broker Member?
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -83,42 +56,30 @@ const MemberBenefits = () => {
           </p>
         </motion.div>
 
-        {/* Benefits Grid - First Row */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center mb-12">
+        {/* Benefits Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
           <motion.div
-            className="p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+            className="p-8 rounded-lg border border-white/30 shadow-lg backdrop-blur-lg bg-[#091650]/10 hover:shadow-2xl transition duration-300"
             variants={itemVariants}
-            whileHover="hover"
           >
-            <motion.div variants={iconVariants} className="inline-block">
-              <GraduationCap className="mx-auto mb-4 w-12 h-12 text-yellow-500" />
-            </motion.div>
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">Students & Fresh Graduates</h3>
-            <p className="text-gray-500">
+            <GraduationCap className="mx-auto mb-4 w-12 h-12 text-[#091650]" />
+            <h3 className="text-xl font-semibold mb-2 uppercase text-[#091650]">Students & Fresh Graduates</h3>
+            <p className="text-black">
               E Broker is ideal for students looking to develop valuable skills...
             </p>
           </motion.div>
 
           <motion.div
-            className="p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+            className="p-8 rounded-lg border border-white/30 shadow-lg backdrop-blur-lg bg-[#091650]/10 hover:shadow-2xl transition duration-300"
             variants={itemVariants}
-            whileHover="hover"
           >
-            <motion.div variants={iconVariants} className="inline-block">
-              <UserCheck className="mx-auto mb-4 w-12 h-12 text-yellow-500" />
-            </motion.div>
-            <h3 className="text-xl font-semibold mb-2 text-gray-800">Career Professionals</h3>
-            <p className="text-gray-500">
+            <UserCheck className="mx-auto mb-4 w-12 h-12 text-[#091650]" />
+            <h3 className="text-xl font-semibold uppercase mb-2 text-[#091650]">Career Professionals</h3>
+            <p className="text-black">
               For professionals looking to enhance their skill set...
             </p>
           </motion.div>
-
-         
         </div>
-
-        {/* Second Row of Benefits */}
-        {/* ... (Add the other benefits here, similar to the above) ... */}
-
       </div>
     </motion.section>
   );
