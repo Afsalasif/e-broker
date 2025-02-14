@@ -32,9 +32,9 @@ const Navbar = () => {
       <header className={`fixed top-0 left-0 w-full p-4 flex justify-between items-center z-50 transition-all duration-300 ${visible ? "bg-white/30 backdrop-blur-md shadow-md" : "-translate-y-full"} hidden md:flex`}>
         <Link href="/">
           <img
-            src="/logo.png"
+            src="/lgg.png"
             alt="Logo"
-            className="w-[50px] h-[25px] md:w-[70px] md:h-[35px] transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-2"
+            className="w-[50px] h-[55px] md:w-[70px] md:h-[55px] transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-2"
           />
         </Link>
         
