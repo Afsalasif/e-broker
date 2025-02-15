@@ -5,14 +5,14 @@ import { FiMenu, FiX } from "react-icons/fi";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setVisible(true);
       } else {
-        setVisible(false);
+        setVisible(true);
       }
     };
     window.addEventListener("scroll", handleScroll);
@@ -22,26 +22,27 @@ const Navbar = () => {
   const navLinks = [
     { href: "/about", label: "About Us" },
     { href: "/services", label: "Our Services" },
-    { href: "/blac-co", label: "Blac & Co" },
-    { href: "/contact", label: "Contact Us" },
-    { href: "/login", label: "Sign In", className: "text-white bg-[#091650] px-4 py-2 rounded-lg" }
+    { href: "/blac-co", label: "membership" },
+    { href: "/contact", label: "Subscriptions" },
+    { href: "/login", label: "Sign Up", className: "text-white bg-[#091650] uppercase px-4 py-2 rounded-lg" }
   ];
 
   return (
     <div>
-      <header className={`fixed top-0 left-0 w-full p-4 flex justify-between items-center z-50 transition-all duration-300 ${visible ? "bg-white/30 backdrop-blur-md shadow-md" : "-translate-y-full"} hidden md:flex`}>
-        <Link href="/">
-          <img
-            src="/lgg.png"
-            alt="Logo"
-            className="w-[50px] h-[55px] md:w-[70px] md:h-[55px] transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-2"
-          />
-        </Link>
+      <header className={` top-0 left-0 w-full p-4 flex justify-between items-center z-50 transition-all duration-300 ${visible ? "bg-white backdrop-blur-md " : "-translate-y-full"} hidden md:flex`}>
+      <Link href="/">
+  <img
+    src="/lgg.png"
+    alt="Logo"
+    className="w-[70px] h-[75px] md:w-[100px] md:h-[80px] transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-2 transform origin-center"
+  />
+</Link>
+
         
         {/* Desktop Menu */}
         <nav className="hidden md:flex md:justify-center md:items-center space-x-6">
           {navLinks.slice(0, -1).map((link) => (
-            <Link key={link.href} href={link.href} className="text-[#091650] hover:text-white">
+            <Link key={link.href} href={link.href} className="text-[#091650] uppercase hover:text-white">
               {link.label}
             </Link>
           ))}

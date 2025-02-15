@@ -1,7 +1,7 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const HowEBrokerWorks = () => {
   const containerVariants = {
@@ -20,7 +20,6 @@ const HowEBrokerWorks = () => {
   const itemVariants = {
     hidden: { opacity: 0, scale: 0.9, y: 20 },
     visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6, ease: "easeInOut" } },
-    hover: { scale: 1.02, y: -5, transition: { duration: 0.3, ease: "easeInOut" } },
   };
 
   return (
@@ -30,30 +29,17 @@ const HowEBrokerWorks = () => {
       initial="hidden"
       animate="visible"
     >
-      {/* Gradient Background */}
-      {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-blue-700 to-blue-400 opacity-95" /> */}
-      
-      {/* Subtle Grid Pattern */}
       <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
 
       <div className="container mx-auto px-4 relative">
-        {/* Title */}
         <motion.div className="text-center mb-16" variants={itemVariants}>
-          <h2 className="text-6xl font-extralight uppercase text-[#091650]">
-            the steps you need to follow
-          </h2>
+          <h2 className="text-5xl font-semibold uppercase text-[#091650]">how e-broker works</h2>
           <p className="mt-4 text-[#091650] font-medium">Streamlined Process for Success</p>
         </motion.div>
 
-        {/* Steps */}
         <div className="flex flex-col items-center space-y-12">
           {[1, 2, 3, 4, 5, 6, 7].map((step) => (
-            <Step
-              key={step}
-              number={step.toString()}
-              text={getStepText(step)}
-              variants={itemVariants}
-            />
+            <Step key={step} number={step.toString()} text={getStepText(step)} details={getStepDetails(step)} />
           ))}
         </div>
       </div>
@@ -61,33 +47,46 @@ const HowEBrokerWorks = () => {
   );
 };
 
-const Step = ({ number, text, variants }: any) => (
-  <motion.div
+const Step = ({ number, text, details }:any) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.div
     className="flex items-center group w-full max-w-2xl"
-    variants={variants}
-    whileHover="hover"
+    onMouseEnter={() => setIsHovered(true)}
+    onMouseLeave={() => setIsHovered(false)}
   >
-    {/* Number Circle */}
     <div className="relative flex-shrink-0">
-      <div className="w-14 h-14 rounded-full bg-[#091650] text-white flex items-center justify-center font-bold text-xl z-10
-           shadow-lg shadow-blue-900/50">
+      <div className="w-14 h-14 rounded-full bg-[#091650] text-white flex items-center justify-center font-bold text-xl z-10 shadow-lg shadow-blue-900/50">
         {number}
       </div>
-      {/* Connecting Line */}
       <div className="absolute top-1/2 left-full h-[2px] bg-blue-400/30 w-24 transform -translate-y-1/2 z-0" />
     </div>
-
-    {/* Text Box */}
-    <div className="ml-6 px-6 py-4 rounded-xl bg-white border border-blue-50 text-[#091650] shadow-lg hover:shadow-xl transition-shadow
-         duration-300 flex-grow relative before:absolute before:left-0 before:top-1/2 before:-translate-x-full before:-translate-y-1/2
-         before:border-8 before:border-r-blue-100 before:border-transparent">
+    <motion.div
+      className="ml-6 px-6 py-4 rounded-xl bg-white border border-blue-50 text-[#091650] shadow-lg transition-shadow duration-300 flex-grow relative"
+      initial={{ opacity: 1, scale: 1 }}
+      animate={{ opacity: isHovered ? 1 : 0.8, scale: isHovered ? 1.05 : 1 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+    >
       <p className="font-semibold text-lg leading-tight">{text}</p>
-    </div>
+      <AnimatePresence>
+        {isHovered && (
+          <motion.p
+            className="text-sm mt-2 text-gray-600"
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -5 }}
+          >
+            {details}
+          </motion.p>
+        )}
+      </AnimatePresence>
+    </motion.div>
   </motion.div>
-);
+  );
+};
 
-// Helper function for step text
-const getStepText = (step: number) => {
+const getStepText = (step:any) => {
   const steps = [
     "Quick Registration & Profile Setup",
     "Full Access to E-Learning Platform",
@@ -95,9 +94,23 @@ const getStepText = (step: number) => {
     "Certification & Skill Validation",
     "Instant Remote Job Placement",
     "Business Management Portal Activation",
-    "Dedicated Leads & Communication Suite"
+    "Get Paid",
   ];
   return steps[step - 1] || "Step";
+};
+
+const getStepDetails = (step:any) => {
+  const details = [
+    "Sign up in just a few minutes by providing essential details such as your name, email, and preferred job category. Complete your profile by uploading your resume, detailing your professional experience, skills, and career goals. This helps tailor the platform's offerings to your specific needs and aspirations.",
+    "Gain immediate access to a vast library of learning materials that include comprehensive courses, eBooks, articles, and video tutorials. These resources cover a wide array of topics, from basic concepts to advanced techniques, providing you with the tools necessary to enhance your skillset and stay ahead in your field.",
+    "Engage with interactive training modules that offer a hands-on approach to learning. Participate in quizzes, assignments, and challenges designed to test your knowledge and improve your practical skills. These modules are created with real-world scenarios to ensure you're fully prepared for your future role.",
+    "Once you’ve completed the necessary modules and assessments, you can validate your skills through official certifications. These certificates are recognized by industry leaders and serve as proof of your expertise, making your profile more attractive to potential employers.",
+    "After completing the training and certifications, the platform matches you with top remote job opportunities based on your profile, qualifications, and preferences. The job matching algorithm takes into account your experience level, desired work hours, and geographical location to provide the most relevant job suggestions in real-time.",
+    "Once you land a job, you can unlock access to a comprehensive business management portal. This portal provides you with tools to manage your projects, communicate with clients, track deadlines, and monitor your productivity. The portal also offers performance analytics to help you improve and grow professionally.",
+    "Finally, once your job is completed, you’ll receive your earnings securely and on time. The platform offers flexible payment options, such as direct bank transfer, PayPal, or other methods, ensuring that your payment is processed smoothly, and you can access your hard-earned money without delays."
+  ];
+  
+  return details[step - 1] || "More info";
 };
 
 export default HowEBrokerWorks;

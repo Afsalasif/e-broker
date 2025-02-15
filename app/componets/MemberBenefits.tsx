@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState, useEffect } from "react";
 import { GraduationCap, UserCheck } from "lucide-react";
 import { motion } from "framer-motion";
@@ -48,11 +48,12 @@ const MemberBenefits = () => {
       <div className="container mx-auto px-8">
         {/* Header Section */}
         <motion.div className="text-center mb-12" variants={itemVariants}>
-          <h2 className="text-5xl font-extralight uppercase tracking-widest leading-tight mb-4 text-[#091650]">
+          <h2 className="text-5xl font-semibold uppercase tracking-normal leading-tight mb-4 text-[#091650]">
             Who Can Become an E Broker Member?
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            E Broker offers an innovative platform for students, professionals, and global participants to thrive in Dubai's real estate market.
+            E Broker offers an innovative platform for students, professionals,
+            and global participants to thrive in Dubai's real estate market.
           </p>
         </motion.div>
 
@@ -63,9 +64,16 @@ const MemberBenefits = () => {
             variants={itemVariants}
           >
             <GraduationCap className="mx-auto mb-4 w-12 h-12 text-[#091650]" />
-            <h3 className="text-xl font-semibold mb-2 uppercase text-[#091650]">Students & Fresh Graduates</h3>
+            <h3 className="text-xl font-semibold mb-2 uppercase text-[#091650]">
+              Students & Fresh Graduates
+            </h3>
             <p className="text-black">
-              E Broker is ideal for students looking to develop valuable skills...
+              E Broker is ideal for students looking to develop valuable skills
+              and certifications that will make them stand out in the
+              competitive job market. The platform is also perfect for fresh
+              graduates who need practical experience and want to boost their
+              resumes with real estate certifications and instant remort job
+              opportunities.
             </p>
           </motion.div>
 
@@ -74,9 +82,15 @@ const MemberBenefits = () => {
             variants={itemVariants}
           >
             <UserCheck className="mx-auto mb-4 w-12 h-12 text-[#091650]" />
-            <h3 className="text-xl font-semibold uppercase mb-2 text-[#091650]">Career Professionals</h3>
+            <h3 className="text-xl font-semibold uppercase mb-2 text-[#091650]">
+              Career Professionals
+            </h3>
             <p className="text-black">
-              For professionals looking to enhance their skill set...
+              For professionals looking to enhance their skill set, switch
+              careers, or explore new opportunities, E Broker offers the
+              flexibility and resources needed to succeed. The platform caters
+              to those interested in remote work and allows professionals to
+              expand into the real estate market.
             </p>
           </motion.div>
         </div>

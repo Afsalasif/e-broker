@@ -8,7 +8,7 @@ const KeyServices = () => {
         
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-extralight uppercase text-[#091650] tracking-widest leading-tight mb-4">
+          <h2 className="text-5xl font-semibold uppercase text-[#091650] tracking-normal leading-tight mb-4">
             Key Services
           </h2>
           <p className="text-lg text-#091650 max-w-3xl mx-auto">
@@ -37,7 +37,7 @@ const KeyServices = () => {
             <div>
               <h3 className="text-xl text-[#091650] uppercase font-thin mb-2">Certification</h3>
               <p className="text-black">
-                Receive accredited certifications recognized by Dubai authorities, boosting your credibility in the real estate sector.
+              Get Certification Recogonized by Dubai Land Department (DLD) & Knowledge and Human Development Authority (KHDA)
               </p>
             </div>
           </div>
@@ -49,7 +49,7 @@ const KeyServices = () => {
             <div>
               <h3 className="text-xl text-[#091650] uppercase font-thin mb-2">Instant Career Opportunities</h3>
               <p className="text-black">
-                Upon course completion, gain direct job placements with top real estate firms in Dubai.
+                Upon course completion, gain direct job placements with Blac & co Real estate LLC in Dubai.
               </p>
             </div>
           </div>
@@ -73,7 +73,7 @@ const KeyServices = () => {
             <div>
               <h3 className="text-xl text-[#091650] uppercase font-thin mb-2">High Commission Rates</h3>
               <p className="text-black">
-                Earn  commission per deal with fast payouts within three days.
+                Earn 35% commission per deal with fast payouts within three to four woking days.
               </p>
             </div>
           </div>
