@@ -20,10 +20,10 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { href: "/about", label: "About Us" },
-    { href: "/services", label: "Our Services" },
-    { href: "/blac-co", label: "membership" },
-    { href: "/contact", label: "Subscriptions" },
+    { href: "#about", label: "About Us" },
+    { href: "#services", label: "Our Services" },
+    { href: "#blac-co", label: "membership" },
+    { href: "#contact", label: "Subscriptions" },
     { href: "/registration", label: "Sign Up", className: "text-white bg-[#091650] uppercase px-4 py-2 rounded-lg" }
   ];
 
