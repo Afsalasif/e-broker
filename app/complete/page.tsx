@@ -13,7 +13,7 @@ const Page = () => {
       
       <div className="flex justify-center mt-12">
         <div className="bg-[#12115e] text-white py-4 px-8 rounded-full shadow-lg transform transition-transform hover:scale-105 duration-300">
-          <span className="font-semibold">your registration is complete</span>
+          <span className="font-semibold">your registration is under process</span>
         </div>
       </div>
 
