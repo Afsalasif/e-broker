@@ -80,9 +80,9 @@ const Plancard = () => {
                 24/7 live chat and sales/documentation support
               </li>
             </ul>
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-200">
+            <a href='/registration' className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded-full transition-colors duration-200">
               Get started
-            </button>
+            </a>
           </motion.div>
 
           {/* Pro Plan */}

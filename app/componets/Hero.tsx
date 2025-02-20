@@ -73,9 +73,9 @@ const Hero = () => {
             >
               Get Started
             </button>
-            <button className="bg-[#091650] border border-gray-300 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition duration-300">
+            <a href="/registration" className="bg-[#091650] border border-gray-300 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition duration-300">
               Sign Up
-            </button>
+            </a>
           </motion.div>
         </div>
 

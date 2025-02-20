@@ -65,7 +65,7 @@ export default function Hhome() {
 
           <div className="mt-8 text-center">
             <Link
-              href="/signup"
+              href="/registration"
               className="inline-block bg-white text-[#091650] px-6 py-2 rounded-lg hover:bg-gray-100"
             >
               Sign Up Now
