@@ -24,7 +24,7 @@ const Navbar = () => {
     { href: "/services", label: "Our Services" },
     { href: "/blac-co", label: "membership" },
     { href: "/contact", label: "Subscriptions" },
-    { href: "/login", label: "Sign Up", className: "text-white bg-[#091650] uppercase px-4 py-2 rounded-lg" }
+    { href: "/registration", label: "Sign Up", className: "text-white bg-[#091650] uppercase px-4 py-2 rounded-lg" }
   ];
 
   return (

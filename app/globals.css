@@ -2,3 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+.phone-input-custom input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid rgba(18, 17, 94, 0.2);
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    transition: all 0.3s;
+  }
+
+  .phone-input-custom input:focus {
+    border-color: #12115e;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(18, 17, 94, 0.3);
+  }
+
+  .react-phone-number-input__country-select {
+    padding-left: 1rem;
+  }
