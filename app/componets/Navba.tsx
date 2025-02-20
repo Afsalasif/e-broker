@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { FiMenu, FiX } from "react-icons/fi";
@@ -9,42 +9,51 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setVisible(true);
-      } else {
-        setVisible(true);
-      }
+      setVisible(window.scrollY > 50 ? true : true);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (id:any) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false); // Close menu after click
+    }
+  };
+
   const navLinks = [
-    { href: "#about", label: "About Us" },
-    { href: "#services", label: "Our Services" },
-    { href: "#blac-co", label: "membership" },
-    { href: "#contact", label: "Subscriptions" },
+    { href: "aboutus", label: "About Us" },
+    { href: "serv", label: "Our Services" },
+    { href: "blac-co", label: "Membership" },
+    { href: "cont", label: "Subscriptions" },
     { href: "/registration", label: "Sign Up", className: "text-white bg-[#091650] uppercase px-4 py-2 rounded-lg" }
   ];
 
   return (
     <div>
-      <header className={` top-0 left-0 w-full p-4 flex justify-between items-center z-50 transition-all duration-300 ${visible ? "bg-white backdrop-blur-md " : "-translate-y-full"} hidden md:flex`}>
-      <Link href="/">
-  <img
-    src="/lgg.png"
-    alt="Logo"
-    className="w-[70px] h-[75px] md:w-[100px] md:h-[80px] transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-2 transform origin-center"
-  />
-</Link>
+      <header
+        className={`top-0 left-0 w-full p-4 flex justify-between items-center z-50 transition-all duration-300 ${visible ? "bg-white backdrop-blur-md" : "-translate-y-full"} hidden md:flex`}
+      >
+        <Link href="/">
+          <img
+            src="/lgg.png"
+            alt="Logo"
+            className="w-[70px] h-[75px] md:w-[100px] md:h-[80px] transition-all duration-300 ease-in-out hover:scale-110 hover:rotate-2 transform origin-center"
+          />
+        </Link>
 
-        
         {/* Desktop Menu */}
         <nav className="hidden md:flex md:justify-center md:items-center space-x-6">
           {navLinks.slice(0, -1).map((link) => (
-            <Link key={link.href} href={link.href} className="text-[#091650] uppercase hover:text-white">
+            <button
+              key={link.href}
+              onClick={() => scrollToSection(link.href)}
+              className="text-[#091650] uppercase hover:text-white"
+            >
               {link.label}
-            </Link>
+            </button>
           ))}
           <Link href={navLinks[navLinks.length - 1].href} className={navLinks[navLinks.length - 1].className}>
             {navLinks[navLinks.length - 1].label}
@@ -62,17 +71,31 @@ const Navbar = () => {
       </button>
 
       {/* Mobile Menu */}
-      <div className={`fixed top-0 right-0 h-full w-3/4 bg-white/30 backdrop-blur-md shadow-lg transform transition-transform duration-300 ease-in-out ${menuOpen ? "translate-x-0" : "translate-x-full"} z-40 md:hidden p-6 flex flex-col space-y-4`}>  
-        {navLinks.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className={`text-[#12115e] ${link.className || ""}`}
-            onClick={() => setMenuOpen(false)}
-          >
-            {link.label}
-          </Link>
-        ))}
+      <div
+        className={`fixed top-0 right-0 h-full w-3/4 bg-white/30 backdrop-blur-md shadow-lg transform transition-transform duration-300 ease-in-out ${
+          menuOpen ? "translate-x-0" : "translate-x-full"
+        } z-40 md:hidden p-6 flex flex-col space-y-4`}
+      >
+        {navLinks.map((link) =>
+          link.href.startsWith("/") ? (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`text-[#12115e] ${link.className || ""}`}
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ) : (
+            <button
+              key={link.href}
+              onClick={() => scrollToSection(link.href)}
+              className="text-[#091650] uppercase hover:text-white"
+            >
+              {link.label}
+            </button>
+          )
+        )}
       </div>
     </div>
   );

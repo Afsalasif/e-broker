@@ -3,7 +3,7 @@ import { BookOpen, Briefcase, ShieldCheck, Globe, DollarSign } from 'lucide-reac
 
 const KeyServices = () => {
   return (
-    <section className="py-20 bg-white text-white   relative overflow-hidden">
+    <section id='serv' className="py-20 bg-white text-white   relative overflow-hidden">
       <div className="container mx-auto px-8">
         
         {/* Header Section */}
