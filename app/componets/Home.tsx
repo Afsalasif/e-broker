@@ -11,14 +11,18 @@ import Plancard from "./Plancard";
 import BusinessPlatformAccess from "./BusinessPlatformAccess";
 import HowEBrokerWorks from "./HowEBrokerWorks";
 import PlanC from "./PlanC";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Hhome() {
   return (
     <div className="min-h-screen bg-gray-100 ">
       <Navba />
-      <button className="fixed bottom-4 z-20 right-4 bg-[#091650] border border-gray-300 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition duration-300">
-        Contact Us
-      </button>
+      <a
+  href="mailto:info@blac-co.com"
+  className="fixed bottom-4 z-20 right-4 bg-[#091650] border border-gray-300 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition duration-300"
+>
+  Contact Us
+</a>
 
       {/* Hero Section */}
       <Hero />
@@ -34,14 +38,15 @@ export default function Hhome() {
       <HowEBrokerWorks />
 
       {/* Contact & CTA */}
-      <section id="conta" className="bg-[#091650] py-10 text-white text-center md:text-left">
+      
+<section id="conta" className="bg-[#091650] py-10 text-white text-center md:text-left">
   <div className="container mx-auto px-6">
     <div className="flex justify-center space-x-4">
       {[
         { href: "#aboutus", label: "About Us" },
         { href: "#serv", label: "Our Services" },
         { href: "#blac-co", label: "Membership" },
-        { href: "#cont", label: "Subscriptions" }
+        { href: "#cont", label: "Subscriptions" },
       ].map((link) => (
         <Link
           key={link.href}
@@ -60,6 +65,29 @@ export default function Hhome() {
       >
         Sign Up
       </Link>
+    </div>
+
+    <div className="mt-8 text-center space-y-4">
+      <div className="flex items-center justify-center space-x-2">
+        <Mail className="w-5 h-5 text-gray-300" />
+        <a href="mailto:info@blac-co.com" className="text-sm text-gray-300 hover:underline">
+          info@blac-co.com
+        </a>
+      </div>
+
+      <div className="flex items-center justify-center space-x-2">
+        <Phone className="w-5 h-5 text-gray-300" />
+        <a href="https://wa.me/971585209417" className="text-sm text-gray-300 hover:underline">
+          +971 58 520 9417
+        </a>
+      </div>
+
+      <div className="flex items-center justify-center space-x-2">
+        <MapPin className="w-5 h-5 text-gray-300" />
+        <p className="text-sm text-gray-300">
+          Office 21-41, Conrad Business Tower, SZR, Dubai, United Arab Emirates
+        </p>
+      </div>
     </div>
 
     <div className="mt-6 text-center">
