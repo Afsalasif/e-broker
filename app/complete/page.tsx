@@ -8,7 +8,7 @@ const Page = () => {
         Thank You
       </h1>
       <h2 className="text-2xl text-center text-[#12115e]/80 mb-8">
-        you will get an confirmation mail soon
+        you will get an email confirmation soon
       </h2>
       
       <div className="flex justify-center mt-12">
