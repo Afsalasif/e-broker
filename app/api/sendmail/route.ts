@@ -69,7 +69,7 @@ export async function POST(request: Request) {
             <p style="color: #555; line-height: 1.6;">
               Below are the details you provided during registration. Please review them for accuracy, and don&apos;t hesitate to reach out if any updates are needed.
             </p>
-    
+      
             <!-- User Details -->
             <table style="width: 100%; border-collapse: collapse; margin-top: 20px; background-color: #f9f9f9; border-radius: 10px; overflow: hidden;">
               <tbody>
@@ -96,7 +96,7 @@ export async function POST(request: Request) {
                 <tr><td style="padding: 10px; border-bottom: 1px solid #ddd;"><strong>Account Holder Name:</strong></td><td style="padding: 10px; border-bottom: 1px solid #ddd;">${accountHolderName}</td></tr>
               </tbody>
             </table>
-    
+      
             <p style="color: #555; line-height: 1.6; margin-top: 20px;">
               Our team is currently reviewing your submission, and we will reach out shortly with the next steps. In the meantime, if you have any questions or need assistance, feel free to contact us.
             </p>
@@ -104,6 +104,21 @@ export async function POST(request: Request) {
             <p style="color: #555; line-height: 1.6;">
               Welcome to the E-Broker family! We look forward to assisting you in achieving your goals.
             </p>
+    
+            <!-- Questions Section -->
+            <h1 style="color: #333; margin-top: 40px;">Questions</h1>
+            <ul style="color: #555; line-height: 1.6; padding-left: 20px;">
+              <li><strong>What is your education level?:</strong> ${educationLevel}</li>
+              <li><strong>What best describes your current employment status?:</strong> ${employmentStatus}</li>
+              <li><strong>Do you have plans to move to Dubai in the future?:</strong> ${moveToDubai}</li>
+              <li><strong>Have you previously worked remotely or are you currently working remotely?:</strong> ${remoteWorkExperience}</li>
+              <li><strong>Are you interested in pursuing a career in real estate?:</strong> ${realEstateCareerInterest}</li>
+              <li><strong>Do you have experience in the real estate industry?:</strong> ${realEstateExperience}</li>
+              <li><strong>Are you comfortable working with clients from different countries?:</strong> ${comfortableWithClients}</li>
+              <li><strong>Do you have any knowledge of Dubai's real estate market?:</strong> ${dubaiMarketKnowledge}</li>
+              <li><strong>Do you have access to a stable internet connection and a laptop/PC for remote work?:</strong> ${stableInternetAccess}</li>
+              <li><strong>Would you be interested in building your own real estate client base through the E-Broker network?:</strong> ${buildClientBaseInterest}</li>
+            </ul>
     
             <div style="text-align: center; margin-top: 30px;">
               <a href="https://e-broker.world" style="background-color: #002147; color: white; text-decoration: none; padding: 12px 25px; border-radius: 5px; font-size: 16px; display: inline-block;">
