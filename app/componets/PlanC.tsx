@@ -26,7 +26,6 @@ const PlanC = () => {
           <h2 className="text-5xl  uppercase tracking-wide font-semibold text-white mb-4">
             Our Subscription
           </h2>
-          
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-1 gap-8 justify-center">
@@ -66,10 +65,11 @@ const PlanC = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">Lifetime Membership</h3>
+              <h3 className="text-xl font-semibold text-white mb-2">
+                Lifetime Membership
+              </h3>
               <div className="text-4xl font-bold text-white mb-4">$499</div>
               <dl>
-                
                 <dd className="text-white">
                   This one-time payment provides lifetime access to both the
                   E-learning Real Estate University and the Business Portal,
@@ -77,12 +77,12 @@ const PlanC = () => {
                   features without additional renewal fees.
                 </dd>
               </dl>
-              <button
+              <a
+                href="/registration"
                 className="bg-[#091650] text-white mt-5 font-extralight py-2 px-6 rounded-full transition-colors duration-200"
-                onClick={() => alert("Get started clicked!")}
               >
                 Get Subscription
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>

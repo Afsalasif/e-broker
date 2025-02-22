@@ -1,5 +1,7 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
+const PDFDocument = require('pdfkit');
+const fs = require('fs');
 
 export async function POST(request: Request) {
   try {
@@ -36,6 +38,7 @@ export async function POST(request: Request) {
       passport,
       picture,
     } = await request.json();
+    
     // Create transporter using Gmail's SMTP settings
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,  // Gmail SMTP host
@@ -139,7 +142,7 @@ export async function POST(request: Request) {
     // Admin notification email
     const adminMailOptions = {
       from: `"E-Broker" <${process.env.EMAIL_USER}>`,
-      to: "afsalasif138@gmail.com",
+      to: "admin@blac-co.com",
       subject: "New User Registration",
       html: `
         <p>A new user has registered:</p>

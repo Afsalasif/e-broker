@@ -35,50 +35,43 @@ export default function Hhome() {
 
       {/* Contact & CTA */}
       <section id="conta" className="bg-[#091650] py-10 text-white text-center md:text-left">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold">About Us</h3>
-              <p className="text-gray-400 mt-2">
-                Learn more about who we are and our mission.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold">Contact Us</h3>
-              <p className="text-gray-400 mt-2">
-                Have any questions? Reach out to us anytime.
-              </p>
-              <p className="text-blue-500 mt-1">
-                <a href="mailto:info@e-broker.world">info@e-broker.world</a>
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold">Subsription</h3>
-              <p className="text-gray-400 mt-2">
-                Sign up for our newsletter to receive updates and special offers.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold">Our Services</h3>
-            </div>
-          </div>
+  <div className="container mx-auto px-6">
+    <div className="flex justify-center space-x-4">
+      {[
+        { href: "#aboutus", label: "About Us" },
+        { href: "#serv", label: "Our Services" },
+        { href: "#blac-co", label: "Membership" },
+        { href: "#cont", label: "Subscriptions" }
+      ].map((link) => (
+        <Link
+          key={link.href}
+          href={link.href}
+          className="text-sm text-gray-300 hover:text-white transition"
+        >
+          {link.label}
+        </Link>
+      ))}
+    </div>
 
-          <div className="mt-8 text-center">
-            <Link
-              href="/registration"
-              className="inline-block bg-white text-[#091650] px-6 py-2 rounded-lg hover:bg-gray-100"
-            >
-              Sign Up Now
-            </Link>
-          </div>
+    <div className="mt-8 text-center">
+      <Link
+        href="/registration"
+        className="text-sm text-white bg-[#091650] uppercase px-4 py-2 rounded-lg hover:bg-[#0b1d70]"
+      >
+        Sign Up
+      </Link>
+    </div>
 
-          <div className="mt-6 text-center">
-            <p className="text-sm text-gray-400">
-              © 2025 e-Broker. All Rights Reserved.
-            </p>
-          </div>
-        </div>
-      </section>
+    <div className="mt-6 text-center">
+      <p className="text-sm text-gray-400">
+        © 2025 e-Broker. All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
     </div>
   );
 }

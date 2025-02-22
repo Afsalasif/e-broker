@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 
 interface ProfessionalInformationFormProps {
   onNext: (data: any) => void;
@@ -18,6 +20,15 @@ const ProfessionalInformationForm: React.FC<ProfessionalInformationFormProps> = 
     businessPhoneNumber: "",
     employmentStatus: "",
   });
+    const [phoneError, setPhoneError] = useState("");
+   const handlePhoneChange = (value: any) => {
+      setFormData((prev) => ({ ...prev, businessPhoneNumber: value || "" }));
+      if (value && !isValidPhoneNumber(value)) {
+        setPhoneError("Invalid phone number for the selected country.");
+      } else {
+        setPhoneError("");
+      }
+    };
 
   // Initialize state with data from parent when component mounts or stepData changes
   useEffect(() => {
@@ -64,17 +75,22 @@ const ProfessionalInformationForm: React.FC<ProfessionalInformationFormProps> = 
         </div>
 
         {/* Business Phone Number */}
-        <div className="space-y-2">
-          <label className="block text-lg font-medium">Business Phone Number</label>
-          <input
-            type="tel"
-            name="businessPhoneNumber"
-            value={formData.businessPhoneNumber}
-            onChange={handleChange}
-            className="w-full p-4 border-2 rounded-xl border-[#12115e]/20 focus:border-[#12115e] focus:ring-2 focus:ring-[#12115e]/30 transition-all"
-            required
-          />
-        </div>
+        <div className="md:col-span-2 space-y-2">
+            <label className="block text-lg font-medium">
+              Contact Number <span className="text-red-500">*</span>
+            </label>
+            <PhoneInput
+              international
+              defaultCountry="AE" // Set default country to UAE
+              value={formData.businessPhoneNumber}
+              onChange={handlePhoneChange}
+              className="phone-input-custom"
+              required
+            />
+            {phoneError && (
+              <p className="text-red-500 text-sm mt-1">{phoneError}</p>
+            )}
+          </div>
 
         {/* Employment Status */}
         <div className="space-y-2">
