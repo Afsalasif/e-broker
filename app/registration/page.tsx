@@ -77,7 +77,7 @@ const RegistrationPage: React.FC = () => {
             <div
               className="h-2 bg-[#12115e] rounded-full transition-all"
               style={{ width: `${progressWidth}%` }}
-            ></div>k
+            ></div>
           </div>
           {/* <div className="absolute top-0 left-0 right-0 text-center text-sm text-[#12115e]">
             Step {step} of 6
