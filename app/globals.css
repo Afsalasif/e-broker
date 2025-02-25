@@ -20,3 +20,13 @@
   .react-phone-number-input__country-select {
     padding-left: 1rem;
   }
+  .service-item {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .service-item.fade-in {
+    opacity: 1;
+    transform: translateY(0); /* Move to its original position */
+  }

@@ -60,25 +60,27 @@ const MemberBenefits = () => {
 
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        <motion.div
-  className="p-8 rounded-lg border border-white/30 shadow-lg backdrop-blur-lg bg-[#091650]/10 hover:shadow-2xl transition duration-300"
-  variants={itemVariants}
->
-  <Building2 className="mx-auto mb-4 w-12 h-12 text-[#091650]" />
-  <h3 className="text-xl font-semibold mb-2 uppercase text-[#091650]">
-    REAL ESTATE BROKERS
-  </h3>
-  <p className="text-black">
-    E Broker is the perfect platform for real estate brokers worldwide who want
-    to enter the booming Dubai real estate market. Dubai offers one of the most
-    lucrative real estate opportunities, but many brokers face challenges due to
-    a lack of resources, licensing, or connections. With E Broker, brokers from
-    anywhere in the world can now sell Dubai real estate properties and earn high
-    commissions—all without the need for a physical presence in Dubai. This is a
-    game-changer for brokers looking to expand and maximize their income in one
-    of the world's fastest-growing real estate markets.
-  </p>
-</motion.div>
+          <motion.div
+            className="p-8 rounded-lg border border-white/30 shadow-lg backdrop-blur-lg bg-[#091650]/10 hover:shadow-2xl transition duration-300"
+            variants={itemVariants}
+          >
+            <Building2 className="mx-auto mb-4 w-12 h-12 text-[#091650]" />
+            <h3 className="text-xl font-semibold mb-2 uppercase text-[#091650]">
+              REAL ESTATE BROKERS
+            </h3>
+            <p className="text-black">
+              E Broker is the perfect platform for real estate brokers worldwide
+              who want to enter the booming Dubai real estate market. Dubai
+              offers one of the most lucrative real estate opportunities, but
+              many brokers face challenges due to a lack of resources,
+              licensing, or connections. With E Broker, brokers from anywhere in
+              the world can now sell Dubai real estate properties and earn high
+              commissions—all without the need for a physical presence in Dubai.
+              This is a game-changer for brokers looking to expand and maximize
+              their income in one of the world's fastest-growing real estate
+              markets.
+            </p>
+          </motion.div>
 
           <motion.div
             className="p-8 rounded-lg border border-white/30 shadow-lg backdrop-blur-lg bg-[#091650]/10 hover:shadow-2xl transition duration-300"

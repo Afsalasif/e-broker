@@ -1,21 +1,55 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaBars } from "react-icons/fa";
-import Navbar from "./Navba";
+
+const images = [
+  "/image1.jpg",
+  "/image2.jpg",
+  "/image3.jpg",
+  
+];
 
 const Hero = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="relative h-screen bg-white flex items-center overflow-hidden">
-      {/* <Navbar /> */}
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from- opacity-90"></div>
+      {/* Background Image Carousel */}
+      <div className="absolute inset-0 w-full h-full">
+        {images.map((src, index) => (
+          <motion.div
+            key={index}
+            className="absolute inset-0 w-full h-full"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: currentImage === index ? 1 : 0 }}
+            transition={{ duration: 1.5 }}
+          >
+            <Image
+              src={src}
+              alt={`Background ${index + 1}`}
+              layout="fill"
+              objectFit="cover"
+              priority
+            />
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Background Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/70 to-white"></div>
 
       {/* Animated Dots on the Left Side */}
-      <div className="absolute top-[33%] hidden md:grid left-0 w-80 h-80 rotate-90  transform  grid-cols-10 grid-rows-5 gap-1 pointer-events-none">
+      <div className="absolute top-[33%] hidden md:grid left-0 w-80 h-80 rotate-90 transform grid-cols-10 grid-rows-5 gap-1 pointer-events-none">
         {Array.from({ length: 50 }).map((_, i) => (
           <div
             key={i}
@@ -24,16 +58,6 @@ const Hero = () => {
           />
         ))}
       </div>
-      {/* <motion.div
-  className="absolute bottom-2 left-0 w-full overflow-hidden whitespace-nowrap"
-  initial={{ x: "100%" }}
-  animate={{ x: "-100%" }}
-  transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
->
-  <h1 className="text-[200px] uppercase md:text-[400px] font-bold text-[#091650] opacity-10">
-    E-Broker  E Broker  E Broker  E Broker  E Broker 
-  </h1>
-</motion.div> */}
 
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col md:flex-row items-center w-full px-10 container mx-auto">
@@ -47,15 +71,12 @@ const Hero = () => {
             Empowering Global Real Estate Agents
           </motion.h1>
           <motion.p
-            className="text-[#091650]  text-lg mb-6"
+            className="text-[#091650] text-lg mb-6"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 1 }}
           >
-            E Broker is an innovative real estate e-commerce platform that
-            enables individuals worldwide to sell Dubai properties remotely and
-            earn commissions, providing all the tools and support needed for
-            success.
+            E Broker is an innovative real estate e-commerce platform that enables individuals worldwide to sell Dubai properties remotely and earn commissions, providing all the tools and support needed for success.
           </motion.p>
           <motion.div
             className="flex space-x-4 justify-center md:justify-start"
@@ -73,22 +94,17 @@ const Hero = () => {
             >
               Get Started
             </button>
-            <a href="/registration" className="bg-[#091650] border border-gray-300 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition duration-300">
+            <a
+              href="/registration"
+              className="bg-[#091650] border border-gray-300 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition duration-300"
+            >
               Sign Up
             </a>
           </motion.div>
         </div>
 
         {/* Illustration */}
-        <div className="md:w-1/2 hidden  md:flex opacity-40 justify-center">
-          <Image
-            src="/iyuy.png"
-            alt="Cybersecurity Illustration"
-            width={600}
-            height={600}
-            priority
-          />
-        </div>
+       
       </div>
     </div>
   );
