@@ -12,17 +12,19 @@ import BusinessPlatformAccess from "./BusinessPlatformAccess";
 import HowEBrokerWorks from "./HowEBrokerWorks";
 import PlanC from "./PlanC";
 import { Mail, Phone, MapPin } from "lucide-react";
+import ChatPopup from "./ChatPopup";
 
 export default function Hhome() {
   return (
     <div className="min-h-screen bg-gray-100 ">
       <Navba />
-      <a
+      {/* <a
   href="mailto:info@blac-co.com"
   className="fixed bottom-4 z-20 right-4 bg-[#091650] border border-gray-300 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition duration-300"
 >
   Contact Us
-</a>
+</a> */}
+<ChatPopup />
 
       {/* Hero Section */}
       <Hero />
