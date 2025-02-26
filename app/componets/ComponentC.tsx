@@ -34,9 +34,9 @@ export default function TextVideoSection() {
           
           {/* Right Side: Video Sticking to Right Edge */}
           <div className="w-full  md:flex md:w-1/2  items-center justify-center md:justify-end relative">
-            <div className="w-full h-[350px] sm:h-[450px] md:h-[500px] lg:h-[600px] xl:h-[700px] relative md:absolute md:right-0">
+            <div className="w-full h-[350px] sm:h-[450px] md:h-[500px] lg:h-[900px] xl:h-[900px] relative md:absolute md:right-0">
               <video
-                className="w-full h-full object-contain md:object-fill  float-end rounded-lg md:rounded-none md:rounded-l-lg"
+                className="w-full h-full object-contain md:object-cover  float-end rounded-lg md:rounded-none md:rounded-l-lg"
                 autoPlay muted loop playsInline
               >
                 <source src="/video.mp4" type="video/mp4" />
