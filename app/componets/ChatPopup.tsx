@@ -23,8 +23,15 @@ const ChatPopup = () => {
 
   // Define a function to normalize and match user input to FAQ answers
   const findAnswer = (input: string) => {
-    // Lowercase and split input to find key phrases
     const normalizedInput = input.toLowerCase();
+
+    // Check for greetings
+    const greetings = ["hi", "hello", "hey", "greetings", "good morning", "good afternoon", "good evening"];
+    for (let greeting of greetings) {
+      if (normalizedInput.includes(greeting)) {
+        return "Hello! How can I assist you today?";
+      }
+    }
 
     // Define possible keywords to match similar questions
     const keywords: Record<string, FAQKey> = {
@@ -35,6 +42,8 @@ const ChatPopup = () => {
       "address": "address",
       "contact": "contact",
       "what is e broker": "about e broker",
+      "tell me about e broker": "about e broker",
+      "about e broker": "about e broker",
       "how does e broker work": "how does e broker work",
       "who can join": "who can join",
       "certification": "certifications",
@@ -71,7 +80,7 @@ const ChatPopup = () => {
         onClick={() => setIsOpen(!isOpen)}
         className="fixed bottom-4 right-4 bg-[#091650] z-20 border border-gray-300 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-md transition duration-300"
       >
-        {isOpen ? "Close Chat" : "Contact Us"}
+        Contact Us
       </button>
 
       {/* Chat Popup */}
