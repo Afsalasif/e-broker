@@ -97,7 +97,7 @@ export default function Hhome() {
 
     <div className="mt-6 text-center">
       <p className="text-sm text-gray-400">
-        © 2025 e-Broker. All Rights Reserved.
+        © 2024 e-Broker. All Rights Reserved.
       </p>
     </div>
   </div>
