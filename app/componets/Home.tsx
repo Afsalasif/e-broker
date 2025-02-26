@@ -11,7 +11,8 @@ import Plancard from "./Plancard";
 import BusinessPlatformAccess from "./BusinessPlatformAccess";
 import HowEBrokerWorks from "./HowEBrokerWorks";
 import PlanC from "./PlanC";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail,  MapPin } from "lucide-react";
+import { FaWhatsapp } from 'react-icons/fa';
 import ChatPopup from "./ChatPopup";
 import TextVideoSection from "./ComponentC";
 
@@ -80,11 +81,11 @@ export default function Hhome() {
       </div>
 
       <div className="flex items-center justify-center space-x-2">
-        <Phone className="w-5 h-5 text-gray-300" />
-        <a href="https://wa.me/971585209417" className="text-sm text-gray-300 hover:underline">
-          +971 58 520 9417
-        </a>
-      </div>
+  <FaWhatsapp className="w-5 h-5 text-gray-300" />
+  <a href="https://wa.me/971585209417" className="text-sm text-gray-300 hover:underline">
+    +971 58 520 9417
+  </a>
+</div>
 
       <div className="flex items-center justify-center space-x-2">
         <MapPin className="w-5 h-5 text-gray-300" />
