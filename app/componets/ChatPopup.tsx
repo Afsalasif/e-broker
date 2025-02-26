@@ -94,7 +94,7 @@ const fuse = new Fuse(Object.entries(faq).map(([key, value]) => ({
 });
 
 const ChatPopup = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
     const [messages, setMessages] = useState([{ 
         text: "Hello! I'm your E Broker assistant. How can I help you today?", 
         sender: "bot" 
