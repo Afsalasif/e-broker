@@ -9,6 +9,7 @@ import StepSixForm from "../complete/RegistrationForm/StepSixForm";
 import StepFiveForm from "../complete/RegistrationForm/StepFiveForm";
 import { useRouter } from "next/navigation";
 import Navbar from "../componets/Navba";
+import NavSec from "../componets/NavSec";
 
 const RegistrationPage: React.FC = () => {
   const [step, setStep] = useState(1);
@@ -68,7 +69,7 @@ const RegistrationPage: React.FC = () => {
 
   return (
     <>
-    <Navbar />
+    <NavSec />
     <div className="min-h-screen bg-gradient-to-br from-[#f0f4ff] to-[#e1e6ff] py-12">
       <div className="container mx-auto px-6">
         {/* Progress Bar */}
