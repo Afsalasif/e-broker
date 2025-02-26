@@ -6,15 +6,15 @@ import { FiMenu, FiX } from "react-icons/fi";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [visible, setVisible] = useState(true);
-
+  
   useEffect(() => {
     const handleScroll = () => {
-      setVisible(window.scrollY > 50 ? true : true);
+      setVisible(window.scrollY > 50 ? !true : true);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
+  
   const scrollToSection = (id:any) => {
     const section = document.getElementById(id);
     if (section) {
@@ -33,8 +33,8 @@ const Navbar = () => {
 
   return (
     <div>
-      <header
-        className={`top-0 left-0 w-full p-4 flex justify-between items-center z-50 transition-all duration-300 ${visible ? "bg-white backdrop-blur-md" : "-translate-y-full"} hidden md:flex`}
+      <div
+        className={`fixed top-0 left-0 w-full p-4 flex justify-between items-center z-50 transition-all duration-300 ${visible ? "bg-transparent" : "-translate-y-full"} hidden md:flex`}
       >
         <Link href="/">
           <img
@@ -50,7 +50,7 @@ const Navbar = () => {
             <button
               key={link.href}
               onClick={() => scrollToSection(link.href)}
-              className="text-[#091650] uppercase hover:text-white"
+              className="text-[#091650] uppercase hover:text-black"
             >
               {link.label}
             </button>
@@ -59,11 +59,11 @@ const Navbar = () => {
             {navLinks[navLinks.length - 1].label}
           </Link>
         </nav>
-      </header>
+      </div>
 
       {/* Mobile Menu Button */}
       <button
-        className={`fixed top-4 right-4 md:hidden bg-white/30 backdrop-blur-md p-2 rounded-md z-50 transition-all duration-300 ${visible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+        className={`absolute top-4 right-4 md:hidden bg-transparent p-2 rounded-md z-50 transition-all duration-300 ${visible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label={menuOpen ? "Close menu" : "Open menu"}
       >

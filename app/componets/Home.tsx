@@ -13,6 +13,7 @@ import HowEBrokerWorks from "./HowEBrokerWorks";
 import PlanC from "./PlanC";
 import { Mail, Phone, MapPin } from "lucide-react";
 import ChatPopup from "./ChatPopup";
+import TextVideoSection from "./ComponentC";
 
 export default function Hhome() {
   return (
@@ -37,6 +38,7 @@ export default function Hhome() {
       {/* Pricing Plans */}
       <PlanC />
       <BusinessPlatformAccess />
+      <TextVideoSection  />
       <HowEBrokerWorks />
 
       {/* Contact & CTA */}

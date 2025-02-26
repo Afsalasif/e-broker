@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import { FaBars } from "react-icons/fa";
 
 const images = [
-  "/image1.jpg",
-  "/image2.jpg",
   "/image3.jpg",
+  "/image2.jpg",
+  "/image4.jpg",
   
 ];
 
@@ -46,7 +46,7 @@ const Hero = () => {
       </div>
 
       {/* Background Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/70 to-white"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white/60 to-white"></div>
 
       {/* Animated Dots on the Left Side */}
       <div className="absolute top-[33%] hidden md:grid left-0 w-80 h-80 rotate-90 transform grid-cols-10 grid-rows-5 gap-1 pointer-events-none">
