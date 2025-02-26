@@ -32,13 +32,13 @@ export default function Hhome() {
 
       {/* About E Broker */}
       <About />
-      <MemberBenefits />
       <KeyServices />
+      <TextVideoSection  />
+      <BusinessPlatformAccess />
+      <MemberBenefits />
 
       {/* Pricing Plans */}
       <PlanC />
-      <BusinessPlatformAccess />
-      <TextVideoSection  />
       <HowEBrokerWorks />
 
       {/* Contact & CTA */}
