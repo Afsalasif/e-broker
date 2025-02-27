@@ -616,7 +616,7 @@ const ChatPopup = () => {
 
       {/* Chat Popup */}
       {isOpen && (
-        <div className="fixed bottom-16 z-20 right-4 w-96 bg-[#091650] text-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
+        <div className="fixed bottom-16 z-20 right-0 md:right-4 w-65 md:w-96 bg-[#091650] text-white border border-gray-300 rounded-lg shadow-lg overflow-hidden">
           <div className="p-3 bg-white text-[#091650] font-bold text-center relative">
             <button
               onClick={() => setIsOpen(false)}
