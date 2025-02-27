@@ -389,7 +389,7 @@ const ChatPopup = () => {
       };
     }
 
-    // Handle thank you messages
+    //---Handle thank you messages
     if (
       normalizedInput.includes("thank") ||
       normalizedInput.includes("thanks") ||
@@ -592,9 +592,12 @@ const ChatPopup = () => {
               sender: "bot",
             },
           ]);
+          
+          
         }, 1000);
       }
     }, typingDelay);
+    setInput('')
   };
 
   // Handle Enter key press
