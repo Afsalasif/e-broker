@@ -35,7 +35,7 @@ const RegistrationPage: React.FC = () => {
 
   const handleFinalSubmit = async (data: any) => {
     const finalData = { ...formData, ...data };
-
+     console.log("we are here")
     try {
       // Send data to backend API
       const response = await fetch("/api/sendmail", {
@@ -64,6 +64,7 @@ const RegistrationPage: React.FC = () => {
     if (isSubmitted) {
       // Trigger redirection only once after submission
       router.push("/complete");
+      // handleFinalSubmit()
     }
   }, [isSubmitted, router]);  // Redirect when form is submitted
 

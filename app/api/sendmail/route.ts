@@ -142,7 +142,7 @@ export async function POST(request: Request) {
     // Admin notification email
     const adminMailOptions = {
       from: `"E-Broker" <${process.env.EMAIL_USER}>`,
-      to: "admin@blac-co.com",
+      to: "info@e-broker.world",
       subject: "New User Registration",
       html: `
         <p>A new user has registered:</p>
@@ -187,7 +187,9 @@ export async function POST(request: Request) {
 
     // Send both emails
     await transporter.sendMail(userMailOptions).catch(err => console.error("User email failed:", err));
-    await transporter.sendMail(adminMailOptions).catch(err => console.error("Admin email failed:", err));
+    await transporter.sendMail(adminMailOptions).catch(err => console.error("Admin email failed:", err)).then(()=>{
+      console.log("done sending")
+    });
 
     return NextResponse.json({ message: "Emails sent successfully!" });
   } catch (error) {
